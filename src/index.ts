@@ -8,28 +8,18 @@ tres notas) de un alumno
 • Luego de resolverlo, pensar en
 aprovechar métodos y discutir
 como representar la información*/
-
-let nombresArreglo: string[] = new Array(3);
-let iNombres: number = 0;
-let notasArreglo: number[] = new Array(3);
-let iNotas: number = 0;
+let arregloNotasPorAlumno: [string, number, number, number] = new Array (3);
+let indice: number = 0;
 let resultado: number = 0;
 
-for (iNombres = 0; iNombres < nombresArreglo.length; iNombres++) {
-  nombresArreglo[iNombres] = prompt(`Ingrese el nombre del alumno ${iNombres}`);
+for (indice = 0; indice < 3 ; indice++) {
+  arregloNotasPorAlumno[0] = String(prompt(`Ingrese el nombre del alumno`));
+  arregloNotasPorAlumno[1] = Number(prompt(`Ingrese la primer nota`));
+  arregloNotasPorAlumno[2] = Number(prompt(`Ingrese la segunda nota`));
+  arregloNotasPorAlumno[3] = Number(prompt(`Ingrese la tercera nota`));
+console.log(`El nombre es: ${arregloNotasPorAlumno[0]}`);
+console.log(`Las notas del alumno son: ${arregloNotasPorAlumno[1]}, ${arregloNotasPorAlumno[2]}, ${arregloNotasPorAlumno[3]}`);
+resultado = (arregloNotasPorAlumno[1] + arregloNotasPorAlumno[2] + arregloNotasPorAlumno[3]) /3;
+console.log("El promedio de notas del alumno es ", resultado);
 }
 
-for (iNombres = 0; iNombres < nombresArreglo.length; iNombres++) {
-  console.log(`Los nombres son: ${nombresArreglo[iNombres]}`);
-}
-
-for (iNotas = 0; iNotas < notasArreglo.length; iNotas++) {
-  notasArreglo[iNotas] = prompt(`Ingrese las notas del trimestre ${iNotas}`);
-}
-
-for (iNotas = 0; iNotas < notasArreglo.length; iNotas++) {
-  console.log(`Las notas del alumno son: ${notasArreglo[iNotas]}`);
-  resultado = notasArreglo[0] + notasArreglo[1] + notasArreglo[2];
-}
-
-console.log(`La suma de las notas es: ${resultado}`);
